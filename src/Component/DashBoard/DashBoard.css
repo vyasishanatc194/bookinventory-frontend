@@ -1,0 +1,44 @@
+.m-t10{
+    margin-top: 10%;
+}
+
+.h-250{
+    height: 250px;
+}
+
+.text-red {
+    color: #dc3545;
+}
+
+.text-green {
+    color: #28a745;
+}
+
+.card-font-size h5 {
+    font-size: 14px;
+    margin-top: 10px !important;
+}
+
+.card-font-size p {
+    font-size: 12px;
+}
+
+.m-b5 {
+    margin-bottom: 5px;
+}
+
+.m-b20{
+    margin-bottom: 20px;
+}
+
+.m-5 {
+    margin: 5px;
+}
+
+.m-l-32{
+    margin-left: -32px;
+}
+
+.m-r15{
+    margin-right: 15px;
+}

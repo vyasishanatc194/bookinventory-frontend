@@ -1,0 +1,14 @@
+export const SET_BOOKS_DATA = 'SET_BOOKS_DATA';
+export const SET_CATEGORY_DATA = 'SET_CATEGORY_DATA';
+
+export const SET_USER_DATA = 'SET_USER_DATA';
+export const SET_AUTH_ERRORS = 'SET_AUTH_ERRORS';
+
+export const SET_AUTH_REDIRECT_PATH = 'SET_AUTH_REDIRECT_PATH';
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+export const SET_TOKEN = 'SET_TOKEN';
+
+export const HANDLE_LOGOUT  = 'HANDLE_LOGOUT';
+
+export const LOADER_START = 'LOADER_START';
+export const LOADER_STOP = 'LOADER_STOP';
