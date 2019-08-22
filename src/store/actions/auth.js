@@ -61,9 +61,7 @@ export const Register = (firstName,lastName,email, password) => {
         return axios.post('api/v1/register', param, {headers: {'Content-Type': 'application/json'}}).then(res => {
             console.log(res.data);
             dispatch(setUserData(res.data));
-            dispatch(setToken(res.data.token));
             dispatch(setErrors({}));
-            localStorage.setItem('token', res.data.token);
             dispatch(setAuthredirectPath('/dashboard'));
             return res.data;
         }).catch(err => {

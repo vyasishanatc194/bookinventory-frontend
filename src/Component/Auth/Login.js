@@ -27,6 +27,7 @@ class LoginComponent extends Component {
     }
 
     componentDidMount() {
+        this.props.setAuthredirectPath("/");
         this.authenticationCheck();
     }
 
@@ -47,14 +48,12 @@ class LoginComponent extends Component {
     };
 
     componentDidUpdate () {
-        console.log(this.props);
         if (this.props.isAuthenticated && this.props.auth.authRedirectPath !== '/') {
             this.props.history.replace('/dashboard');
         }
     }
 
     handleLogin = () => {
-        console.log(this.state);
         this.props.Login(this.state.formData.email, this.state.formData.password)
         
     }

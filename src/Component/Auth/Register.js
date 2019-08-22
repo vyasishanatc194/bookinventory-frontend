@@ -78,23 +78,43 @@ class RegisterComponent extends Component {
         return true;
     }
 
-    
-    handleLogin = () => {
-        const { firstName, lastName, email, password } = this.state.formData;
+    componentDidMount() {
+        this.props.setAuthredirectPath("/");
+        this.authenticationCheck();
+    }
+
+
+    authenticationCheck = () => {
         const { history } = this.props;
-        console.log('props', this.state, this.props)
-        this.props.Register(firstName, lastName, email, password);
         const token = localStorage.getItem('token');
     
         if (!token) {
-          history.replace('/login');
+          history.replace('/register');
         } else {
             history.replace('/');
         }
     }
 
+    componentDidUpdate () {
+        if (this.props.auth.authRedirectPath !== '/') {
+            this.props.history.replace('/login');
+        }
+    }
+
+    
+    handleLogin = () => {
+        const { firstName, lastName, email, password } = this.state.formData;
+        // const { history } = this.props;
+        this.props.Register(firstName, lastName, email, password);
+        // const token = localStorage.getItem('token');
+        // history.replace('/login');
+        // if (!token) {
+        // } else {
+        //     history.replace('/');
+        // }
+    }
+
     render() {
-        console.log(this.props.auth)
         return (
             <div className="container login-container">
                 <div className="row card-center">
@@ -129,13 +149,13 @@ class RegisterComponent extends Component {
                                         value={this.state.formData.password}
                                         error={this.state.errors.password}
                                         type="password"/>
-                            {/* <div className="clearfix">
+                            <div className="clearfix">
                                 {
                                     this.props.auth.errors.hasOwnProperty('non_field_errors')
                                     ? <span className="text-red float-left">{this.props.auth.errors.non_field_errors}</span>
                                     : ''
                                 }
-                            </div> */}
+                            </div>
                             <div className="clearfix">
                                 <Button type="submit" primary className="btnSubmit"
                                     disabled={!this.isFormValid()}>
